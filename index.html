@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everywhere - Your AI Best Friend</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="intro-screen" id="introScreen">
+            <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f916.svg" alt="Bot" class="bot-avatar">
+            <h1>Welcome to Everywhere</h1>
+            <p>Your personal AI companion, ready to assist you with daily tasks, share interesting conversations, and be your digital best friend.</p>
+            <div class="feature-tags">
+                <span class="feature-tag">🤖 Smart Conversations</span>
+                <span class="feature-tag">📝 Task Management</span>
+                <span class="feature-tag">💫 Always Here</span>
+            </div>
+            <div class="tap-button" id="enterButton">Tap to Enter ✨</div>
+        </div>
+    </div>
+    <div class="container" id="mainContainer" style="display: none;">
+        <div class="chat-container">
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <i class="fas fa-bars menu-icon"></i>
+                    <span>Menu</span>
+                </div>
+                <div class="sidebar-features">
+                    <div class="feature-item active">
+                        <i class="fas fa-comment-dots"></i>
+                        <span>Chat</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Daily Tasks</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-sticky-note"></i>
+                        <span>Notes</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Reminders</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-book"></i>
+                        <span>Knowledge Base</span>
+                    </div>
+                </div>
+                <div class="sidebar-footer">
+                    <div class="feature-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-main">
+                <div class="chat-header">
+                <div class="header-content">
+                    <div class="bot-avatar">
+                        <div class="avatar-glow"></div>
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h1>Everywhere</h1>
+                </div>
+                <p class="status">Your AI Best Friend</p>
+            </div>
+            <div class="chat-messages" id="chatMessages" class="custom-scrollbar">
+                <!-- Messages will be added here dynamically -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Type your message..." autocomplete="off">
+                <button id="sendButton">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('enterButton').addEventListener('click', function() {
+            document.getElementById('introScreen').style.opacity = '0';
+            document.getElementById('mainContainer').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('mainContainer').style.opacity = '1';
+                document.getElementById('introScreen').style.display = 'none';
+            }, 500);
+        });
+    </script>
+</body>
+</html>
